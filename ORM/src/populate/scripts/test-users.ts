@@ -28,21 +28,21 @@ export const execute: PopulateScriptExecutor = async (manager: EntityManager) =>
   const dog1 = new Dogs();
   dog1.race_name = 'French Bulldog';
   dog1.description = 'Short and stout';
-  dog1.uuid = profile;
+  dog1.uuid = profile.id;
 
   await manager.save(dog1);
 
   const dog2 = new Dogs();
   dog2.race_name = 'Corgi';
   dog2.description = 'Short and long';
-  dog2.uuid = profile;
+  dog2.uuid = profile.id;
 
   await manager.save(dog2);
 
   const dog3 = new Dogs();
   dog3.race_name = 'Borzoi';
   dog3.description = 'Hairy and tall';
-  dog3.uuid = adminProfile;
+  dog3.uuid = adminProfile.id;
 
   await manager.save(dog3);
 };
