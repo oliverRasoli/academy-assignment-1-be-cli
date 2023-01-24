@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm';
+import { Profiles } from '../auth/Profiles';
 
 /**
  * This entity contains the profile information for a user that is not login related.
@@ -18,6 +19,7 @@ export class Dogs {
   @Column()
   description: string;
 
-  @Column()
-  uuid: string;
+  @OneToOne(() => Profiles)
+  @JoinColumn()
+  uuid: Profiles;
 }
