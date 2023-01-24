@@ -11,15 +11,15 @@ export const execute: PopulateScriptExecutor = async (manager: EntityManager) =>
 
   const adminProfile = new Profiles();
   adminProfile.username = 'Bob';
-  adminProfile.password = 'Bobby';
+  adminProfile.password = '12345678';
   adminProfile.id = authUser1.id;
   adminProfile.created_at = authUser1.created_at;
 
   await manager.save(adminProfile);
 
   const profile = new Profiles();
-  profile.username = 'Bob';
-  profile.password = 'Marley';
+  profile.username = 'Marley';
+  profile.password = '12345678';
   profile.id = authUser2.id;
   profile.created_at = authUser2.created_at;
 
