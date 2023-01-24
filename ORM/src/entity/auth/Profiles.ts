@@ -1,4 +1,3 @@
-import { RandomUUIDOptions } from 'crypto';
 import { Entity, Column, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
 
 /**
@@ -20,8 +19,5 @@ export class Profiles {
   password: string;
 
   @Column()
-  age: number;
-
-  @Column()
-  created_at: Timestamp;
+  created_at: string;
 }
