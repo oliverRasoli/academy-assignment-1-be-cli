@@ -15,8 +15,8 @@ TO authenticated
 WITH CHECK (true);
 
 DROP POLICY IF EXISTS update_access_based_on_id on public.profiles;
-CREATE POLICY update_access_based_on_id
-ON public.profiles
-FOR UPDATE USING (
-  auth.uid() = id
-);
+CREATE POLICY update_access_based_on_id ON public.profiles
+AS PERMISSIVE FOR UPDATE
+TO authenticated
+USING ((auth.uid() = id))
+WITH CHECK ((auth.uid() = id))
